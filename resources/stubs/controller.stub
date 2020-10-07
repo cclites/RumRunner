@@ -1,0 +1,38 @@
+<?php
+
+namespace %NAMESPACE%;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+%IMPORT%
+
+use App\Http\Requests\%CLASS%Request;
+
+class %CLASS%Controller extends Controller
+{
+
+    public function index(%CLASS%Request $request){
+
+        if($request->json){
+            return %CLASS%::all();
+        }
+
+        return view('%VUE%', '%TITLE%', [], []);
+    }
+
+    public function show(%CLASS%Request $request, %CLASS% $%class%){
+        return $%class%;
+    }
+
+    public function create(%CLASS%UpdateRequest $request){
+
+    }
+
+    public function update(%CLASS%UpdateRequest $request, %CLASS% $%class%){
+
+    }
+
+    public function delete(%CLASS%UpdateRequest $request, %CLASS% $%class%){
+        $%class%->delete();
+    }
+}

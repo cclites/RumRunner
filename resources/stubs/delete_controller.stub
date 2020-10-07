@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Http\Controllers\%NAMESPACE%;
+
+use App\Http\Controllers\Controller;
+use App\Http\Requests\%CLASS%UpdateRequest;
+use Illuminate\Http\Request;
+
+class %CLASS%DeleteController extends Controller
+{
+    public function index(%CLASS%UpdateRequest $request){
+
+        $data = $request->validated();
+
+    }
+}

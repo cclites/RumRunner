@@ -1,0 +1,13 @@
+<?php
+
+namespace %NAMESPACE%;
+
+use Illuminate\Database\Eloquent\Model;
+use App\Http\Requests\%CLASS%Request;
+use App\Http\Requests\%CLASS%UpdateRequest;
+
+
+class %CLASS% extends Model
+{
+
+}

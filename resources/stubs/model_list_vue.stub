@@ -1,0 +1,93 @@
+<!-- template to display lists of a collection type (users, invoices, .etc) -->
+<template>
+    <div>
+        <b-overlay :show="show" rounded="sm">
+
+            <record-count :%class%s="this.items.length"></record-count>
+
+            <b-table striped hover
+                     :items="items"
+                     :per-page="perPage"
+                     :current-page="currentPage"
+                     :fields="fields"
+                     @row-clicked="show%CLASS%s"
+            >
+            </b-table>
+
+            <pagination
+                :rows = "this.items.length"
+                :perPage="this.perPage"
+                :currentPage="this.currentPage"
+            >
+            </pagination>
+
+        </b-overlay>
+    </div>
+</template>
+
+<script>
+
+    import pagination from '../utilities/Pagination';
+    import record_count from '../utilities/RecordCount';
+
+    export default {
+
+        props: {},
+
+        components: {pagination, record_count},
+
+        mixins: [],
+
+        data() {
+            return {
+                items: [],
+                rows: '',
+                currentPage: 1,
+                perPage: 10,
+                show: false,
+                url: '%VUE%s/',
+                reportUrl : '%class%s-report/',
+                fields: [],
+            }
+        },
+
+        computed: {},
+
+        methods: {
+
+            get%CLASS%s() {
+
+                this.show = true;
+
+                axios.get(this.url)
+
+                    .then( ({ response }) => {
+                        this.items = response.data;
+                        this.rows = this.items.length;
+                    })
+                    .catch(e => {})
+                    .finally(() => {
+                        this.show = false;
+                    })
+
+            },
+
+            show%CLASS%s(row){
+
+                this.show = true;
+                window.location = this.reportUrl + row.%class%_id;
+                this.show = false;
+            }
+        },
+
+        mounted() {
+            this.get%CLASS%s();
+        },
+
+        watch: {},
+    }
+</script>
+
+<style scoped>
+
+</style>

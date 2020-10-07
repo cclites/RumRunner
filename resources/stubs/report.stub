@@ -1,0 +1,69 @@
+<?php
+
+
+namespace App\Reports;
+
+use Carbon\Carbon;
+
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder as QueryBuilder;
+use Illuminate\Support\Arr;
+
+class %CLASS%Report extends Builder
+{
+
+    protected $timezone;
+
+    protected $query;
+
+    public function __construct()
+    {
+
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Query\Builder
+     */
+    public function query(): self
+    {
+        return $this;
+    }
+
+    /**
+     * @param $timezone
+     * @return $this
+     */
+    public function setTimezone($timezone){
+
+        $this->timezone = $timezone;
+        return $this;
+    }
+
+    public function applyFilters($args): self
+    {
+
+        //TODO:: Build the query
+
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    protected function results(): iterable
+    {
+        $data = $this->query
+            ->get()
+            ->map(function ($q){
+
+                return [
+
+                ];
+
+            })
+            ->values();
+
+        return $data;
+    }
+}
