@@ -52,7 +52,7 @@ class TestFactory extends BaseCommand
 
         $this->setup($class, $directory);
 
-        $this->generateResourceRoutes();
+        $this->generateRoutes();
 
         /*
         $this->addVue();

@@ -306,7 +306,7 @@ class BaseCommand extends Command
     }
 
 
-    /** UPDATED  5/30/2020          */
+    /** UPDATED  11/02/2020          */
     /**
      * Generate single controller routes
      */
@@ -317,7 +317,7 @@ class BaseCommand extends Command
         $lcRelativePath = strtolower($relativePath);
         $namedRoute = $this->directory ? Str::plural(strtolower($this->rawDirectory)) . "." . Str::snake($this->file) : Str::snake($this->file);
 
-        $contents = file_get_contents(base_path('routes/web.php'));
+        $contents = file_get_contents(base_path('routes/web.php')) . "\n";
 
         $contents .= "Route::get('{$lcRelativePath}', '{$this->file}Controller@index')->name('{$namedRoute}_index');\n";
         $contents .= "Route::get('{$lcRelativePath}/{" . strtolower($this->file) . "}', '{$relativePath}Controller@show')->name('{$namedRoute}_show');\n";
@@ -329,7 +329,7 @@ class BaseCommand extends Command
     }
 
     public function generateResourceRoutes(){
-        
+        return;
 
         $contents = file_get_contents(base_path('routes/web.php'));
 
