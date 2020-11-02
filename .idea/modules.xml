@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../WagerChamps/.idea/ExtantIris.iml" filepath="$PROJECT_DIR$/../WagerChamps/.idea/ExtantIris.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/RumRunner.iml" filepath="$PROJECT_DIR$/.idea/RumRunner.iml" />
     </modules>
   </component>

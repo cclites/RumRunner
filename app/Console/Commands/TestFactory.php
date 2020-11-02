@@ -9,12 +9,9 @@ use Illuminate\Support\Facades\File;
 
 use Illuminate\Support\Str;
 
-/**
- * NOTES: This factory is used to create a report-oriented flow. Adds a blade, vue, registers all components.
- */
 
 /**
- * Class ReportFactory
+ * Class TestFactory
  * @package App\Console\Commands
  */
 class TestFactory extends BaseCommand
@@ -31,7 +28,7 @@ class TestFactory extends BaseCommand
      *
      * @var string
      */
-    protected $description = 'Generate boilerplate for a report';
+    protected $description = 'For testing only';
 
     /**
      * Create a new command instance.
@@ -55,19 +52,28 @@ class TestFactory extends BaseCommand
 
         $this->setup($class, $directory);
 
-//        $this->addClass();
+        $this->generateResourceRoutes();
+
+        /*
+        $this->addVue();
+        $this->registerComponent();
+        $this->addRequest();
+
+
+        $this->addClass();
 
         $this->addController();
 
-//        $this->addVue();
-//
-//        $this->addBlade();
-//
-//        $this->addRoute();
-//
-//        $this->addRequest();
-//
-//        $this->addTableMigration();
+
+
+        $this->addBlade();
+
+        $this->addRoute();
+
+        $this->addRequest();
+
+        $this->addTableMigration();
+        */
 
     }
 }

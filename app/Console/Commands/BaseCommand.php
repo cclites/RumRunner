@@ -173,22 +173,6 @@ class BaseCommand extends Command
         Artisan::call("make:request {$file}UpdateRequest");
     }
 
-    /** UPDATED  10/06/2020          */
-    /**
-     * Add route for a single controller
-     *
-     * @param string $method
-     * @param string $action
-     */
-    public function addRoute($method = 'get', $action = 'index') : void
-    {
-        $relativePath = $this->directory ? $this->directory . $this->file : $this->file;
-        $namedRoute = $this->directory ? Str::snake($this->rawDirectory) . "." . Str::snake($this->file) : Str::snake($this->file);
-
-        $contents = file_get_contents(base_path('routes/web.php'));
-        $contents .= "Route::{$method}('{$relativePath}','{$relativePath}Controller@{$action}')->name('{$namedRoute}');\n";
-        file_put_contents(base_path('routes/web.php'), $contents);
-    }
 
     /** UPDATED  10/06/2020          */
     /**
@@ -303,33 +287,51 @@ class BaseCommand extends Command
         return $path;
     }
 
+    /** UPDATED  11/02/2020          */
+    /**
+     * Add route for a single controller
+     *
+     * @param string $method
+     * @param string $action
+     */
+    public function addRoute($method = 'get', $action = 'index') : void
+    {
+        $relativePath = $this->directory ? Str::plural(ucfirst($this->rawDirectory)) . "/" . $this->file  : $this->file;
+        $relativePath = strtolower($relativePath);
+        $namedRoute = $this->directory ? Str::plural(strtolower($this->rawDirectory)) . "." . Str::snake($this->file) : Str::snake($this->file);
+
+        $contents = file_get_contents(base_path('routes/web.php'));
+        $contents .= "Route::{$method}('{$relativePath}','{$this->file}Controller@{$action}')->name('{$namedRoute}_{$action}');\n";
+        file_put_contents(base_path('routes/web.php'), $contents);
+    }
+
+
     /** UPDATED  5/30/2020          */
     /**
      * Generate single controller routes
      */
     public function generateRoutes()
     {
-        //Don't want to do this
-        die("generateRoutes\n");
 
-        $route = Str::kebab($this->file);
-        $routeName = Str::snake($this->vueFileName);
-        $controllerFileName = strtolower($this->controllerFileName);
-        $lowerCase = strtolower($this->file);
-
-        if($this->directory !== ""){
-            $route = Str::kebab($this->file . $this->directory);
-            $controllerFileName = Str::plural(ucfirst($this->directory)) . "/" . ucfirst($this->file);
-            $routeName = Str::plural(strtolower($this->directory)) . "." . $routeName;
-        }
+        $relativePath = $this->directory ? Str::plural(ucfirst($this->rawDirectory)) . "/" . $this->file  : $this->file;
+        $lcRelativePath = strtolower($relativePath);
+        $namedRoute = $this->directory ? Str::plural(strtolower($this->rawDirectory)) . "." . Str::snake($this->file) : Str::snake($this->file);
 
         $contents = file_get_contents(base_path('routes/web.php'));
-        $contents .= "/** {$this->fileName}  {$this->directory} **/\n";
-        $contents .= "Route::get('{$route}s', '{$controllerFileName}Controller@index')->name('{$routeName}s');\n";
-        $contents .= "Route::get('{$route}s/{{$lowerCase}}', '{$controllerFileName}Controller@index')->name('{$routeName}s');\n";
-        $contents .= "Route::post('{$route}s', '{$controllerFileName}Controller@create')->name('{$routeName}s_create');\n";
-        $contents .= "Route::patch('{$route}s/{{$lowerCase}}', '{$controllerFileName}Controller@update')->name('{$routeName}s_update');\n";
-        $contents .= "Route::delete('{$route}s/{{$lowerCase}}', '{$controllerFileName}Controller@delete')->name('{$routeName}s_delete');\n";
+
+        $contents .= "Route::get('{$lcRelativePath}', '{$this->file}Controller@index')->name('{$namedRoute}_index');\n";
+        $contents .= "Route::get('{$lcRelativePath}/{" . strtolower($this->file) . "}', '{$relativePath}Controller@show')->name('{$namedRoute}_show');\n";
+        $contents .= "Route::put('{$lcRelativePath}/', '{$relativePath}Controller@put')->name('{$namedRoute}_put');\n";
+        $contents .= "Route::patch('{$lcRelativePath}/{" . strtolower($this->file) . "}', '{$relativePath}Controller@patch')->name('{$namedRoute}_patch');\n";
+        $contents .= "Route::delete('{$lcRelativePath}/{" . strtolower($this->file) . "}', '{$relativePath}Controller@delete')->name('{$namedRoute}_delete');\n";
+
+        file_put_contents(base_path('routes/web.php'), $contents);
+    }
+
+    public function generateResourceRoutes(){
+        
+
+        $contents = file_get_contents(base_path('routes/web.php'));
 
         file_put_contents(base_path('routes/web.php'), $contents);
     }
@@ -385,10 +387,10 @@ class BaseCommand extends Command
 
         $contents = file_get_contents($path);
         $contents .= "/** {$this->fileName}   **/\n";
-        $contents .= "Route::get('{$route}s-show', '{$controllerFileName}Controller@index')->name('{$routeName}s_show');\n";
-        $contents .= "Route::post('{$route}s-create', '{$controllerFileName}ShowController@create')->name('{$routeName}s_create');\n";
-        $contents .= "Route::patch('{$route}s-update', '{$controllerFileName}UpdateController@update')->name('{$routeName}s_update');\n";
-        $contents .= "Route::delete('{$route}s-delete', '{$controllerFileName}AddController@delete')->name('{$routeName}s_delete');\n";
+        $contents .= "Route::get('{$route}s-show', '{$controllerFileName}Controller@index')->name('{$routeName}_show');\n";
+        $contents .= "Route::post('{$route}s-create', '{$controllerFileName}ShowController@create')->name('{$routeName}_create');\n";
+        $contents .= "Route::patch('{$route}s-update', '{$controllerFileName}UpdateController@update')->name('{$routeName}_update');\n";
+        $contents .= "Route::delete('{$route}s-delete', '{$controllerFileName}AddController@delete')->name('{$routeName}_delete');\n";
 
         file_put_contents($path, $contents);
     }
