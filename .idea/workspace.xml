@@ -2,34 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73b38470-46a9-4d4c-adf2-f56456b9909a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WagerChamps/public/images/card-logos.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WagerChamps/resources/images/card-logos.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/Main.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/layouts/CountDown.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/layouts/Email.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/layouts/Footer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/layouts/FooterNav.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/layouts/Header.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/layouts/Jumbotron.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/layouts/Splash.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/layouts/SplashPanel.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WagerChamps/resources/views/layouts/app.blade.copy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../WagerChamps/resources/views/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/RumRunner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RumRunner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Generators/BaseGenerator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Generators/BladeGenerators.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Generators/ClassGenerators.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Generators/ControllerGenerators.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Generators/ModelGenerators.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Generators/RequestGenerators.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Generators/RouteGenerators.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Generators/VueGenerators.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Interfaces/GeneratorInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/Messenger.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/BaseCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/BaseCommand.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/TestFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/TestFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/InvoiceController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WagerChamps/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PrizesRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Users/ContestsRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Users/LeagueRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Users/LeagueUpdateRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Users/PicksRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Users/PicksUpdateRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Prizes.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/users/Contests.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/users/League.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/users/Picks.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/utilities/Pagination.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/utilities/RecordCount.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WagerChamps/.idea/ExtantIris.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/.idea/ExtantIris.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WagerChamps/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WagerChamps/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WagerChamps/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WagerChamps/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/app/Http/Controllers/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WagerChamps/app/Http/Controllers/LeaguesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/app/Http/Controllers/LeaguesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WagerChamps/app/Http/Controllers/StandingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/app/Http/Controllers/StandingsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WagerChamps/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WagerChamps/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../WagerChamps/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WagerChamps/resources/js/components/Sidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/Sidebar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WagerChamps/resources/js/components/UserDashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/UserDashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WagerChamps/resources/js/components/users/Leagues.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/users/Leagues.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WagerChamps/resources/js/components/users/Picks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/users/Picks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WagerChamps/resources/js/components/users/Standings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/resources/js/components/users/Standings.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WagerChamps/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/resources/views/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../WagerChamps/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../WagerChamps/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +64,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../WagerChamps" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -268,6 +281,10 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2636" y="153" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1603046374683" />
+    <state x="2610" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604693910465">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2610" y="271" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604693910465" />
     <state x="2610" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602792479784">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>

@@ -2,12 +2,11 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
-
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\File;
-
-use Illuminate\Support\Str;
+use App\Generators\BladeGenerators;
+use App\Generators\RouteGenerators;
+use App\Generators\ControllerGenerators;
+use App\Generators\RequestGenerators;
+use App\Generators\VueGenerators;
 
 
 /**
@@ -50,9 +49,30 @@ class TestFactory extends BaseCommand
         $class = $this->argument('class');
         $directory = $this->argument('directory') ? $this->argument('directory')  : '';
 
-        $this->setup($class, $directory);
+        /*
+        $generator = new BladeGenerators($class, $directory);
+        $generator->generateBlade();
 
-        $this->generateRoutes();
+        $generator = new RouteGenerators($class, $directory);
+        $generator->create();
+
+        $generator = new RouteGenerators($class, $directory);
+        $generator->createRest();
+
+        $generator = new ControllerGenerators($class, $directory);
+        $generator->create();
+
+        $generator = new RequestGenerators($class, $directory);
+        $generator->create();
+        */
+
+        $generator = new VueGenerators($class, $directory);
+        $generator->create();
+
+
+        //$this->setup($class, $directory);
+
+        //$this->generateRoutes();
 
         /*
         $this->addVue();

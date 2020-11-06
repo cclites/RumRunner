@@ -103,6 +103,8 @@ class BaseCommand extends Command
      */
     public function __construct()
     {
+        //TODO: Finish deprecating
+        dd("This is to be deprecated.");
         parent::__construct();
     }
 
@@ -145,10 +147,6 @@ class BaseCommand extends Command
     public function addController(){
 
         $this->controllerPathGenerator();
-
-        echo "Generated paths\n";
-        dump($this->controllerPath);
-        dump($this->controllerUrl);
 
         $this->hasDirectory($this->controllerPath);
 
@@ -554,9 +552,8 @@ class BaseCommand extends Command
      * @param $file
      * @param $directory
      */
-    public function setup($file, $directory) : void
+    public function setup(string $file, string $directory='') : void
     {
-
         $this->file = ucfirst($file);
         $this->rawDirectory = $directory; //save an unformatted version of directory
         $this->directory = $directory ? ucfirst($directory) . "/" : '';
